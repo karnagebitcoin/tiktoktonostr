@@ -14,22 +14,13 @@ It detects the active TikTok video, prepares a note draft, asks a backend servic
 
 ## Load Unpacked In Chrome
 
-1. Install dependencies:
+The repository includes a ready-to-load `dist/` folder.
 
-```bash
-npm install
-```
-
-2. Build the extension:
-
-```bash
-npm run build
-```
-
-3. Open `chrome://extensions`.
-4. Enable `Developer mode`.
-5. Click `Load unpacked`.
-6. Select the `dist` folder from this project.
+1. Download or clone the repository.
+2. Open `chrome://extensions`.
+3. Enable `Developer mode`.
+4. Click `Load unpacked`.
+5. Select the `dist` folder from this project.
 
 ## Requirements
 
@@ -44,6 +35,8 @@ npm run build
 npm install
 npm run build
 ```
+
+Run the build only if you want to modify the extension source and regenerate `dist/`.
 
 The extension source lives in `src/` and the backend worker lives in `backend/`.
 

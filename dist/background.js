@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((e,t,n)=>e?.type===`ttn:open-popup`?((async()=>{try{await chrome.action.openPopup(),n({ok:!0});return}catch{await chrome.windows.create({url:chrome.runtime.getURL(`index.html`),type:`popup`,width:420,height:760}),n({ok:!0,fallback:!0})}})(),!0):!1);
