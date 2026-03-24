@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 348 100% 67%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 184 88% 90%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 30% 94%;
+    --muted-foreground: 215 16% 40%;
+    --accent: 184 92% 56%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 24% 88%;
+    --input: 220 24% 88%;
+    --ring: 348 100% 67%;
+    --radius: 1.25rem;
+    --brand-hot: 348 100% 67%;
+    --brand-cool: 184 92% 56%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 348 100% 67%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 184 88% 90%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 24% 88%;
+    --sidebar-ring: 348 100% 67%;
+  }
+
+  .dark {
+    --background: 224 42% 8%;
+    --foreground: 210 40% 98%;
+    --card: 224 38% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 38% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 348 100% 67%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 24% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 221 26% 17%;
+    --muted-foreground: 215 20% 72%;
+    --accent: 184 92% 56%;
+    --accent-foreground: 224 42% 8%;
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 20% 20%;
+    --input: 222 20% 20%;
+    --ring: 184 92% 56%;
+    --sidebar-background: 224 38% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 348 100% 67%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 220 24% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 20% 20%;
+    --sidebar-ring: 184 92% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter Variable", sans-serif;
+    background-image:
+      linear-gradient(180deg, rgba(15, 23, 42, 0.06), rgba(15, 23, 42, 0)),
+      radial-gradient(circle at 12% 12%, rgba(255, 91, 122, 0.18), transparent 24%),
+      radial-gradient(circle at 88% 84%, rgba(35, 244, 244, 0.14), transparent 22%);
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}

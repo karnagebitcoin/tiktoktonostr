@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "TikTok to Nostr",
+  "version": "0.1.0",
+  "description": "Preview a TikTok video, upload it to Blossom, and publish it to Nostr with one click.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "TikTok to Nostr",
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.tiktok.com/*", "https://tiktok.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["page-bridge.js"],
+      "matches": ["https://www.tiktok.com/*", "https://tiktok.com/*"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' http: https: wss: ws: blob: data:; img-src 'self' http: https: data: blob:; media-src 'self' http: https: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:"
+  }
+}
