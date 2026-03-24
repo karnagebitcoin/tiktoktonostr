@@ -12,6 +12,7 @@ node_modules
 dist-ssr
 *.local
 .ai/
+.agents/
 yarn.lock
 
 # Editor directories and files
